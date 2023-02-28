@@ -13,7 +13,7 @@
       name: myPublicIP
     register: output_ip_address
 
-  - name: Public IP of VM
+  - name: "Public IP of VM"
     debug:
       msg: "The public IP is {{ output_ip_address.state.ip_address }}."
 
