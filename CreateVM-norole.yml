@@ -2,23 +2,6 @@
   hosts: localhost
   connection: local
   tasks:
-  - name: Create resource group
-    azure_rm_resourcegroup:
-      name: xv-demos
-      location: centralus
-
-  - name: Create virtual network
-    azure_rm_virtualnetwork:
-      resource_group: xv-demos
-      name: xv-demos-vnet
-      address_prefixes: "10.2.0.0/16"
-
-  - name: Add subnet
-    azure_rm_subnet:
-      resource_group: xv-demos
-      name: xv-demos-snet
-      address_prefix: "10.2.1.0/24"
-      virtual_network: xv-demos-vnet
 
   - name: Create public IP address
     azure_rm_publicipaddress:
