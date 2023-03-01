@@ -2,8 +2,6 @@
 - name: Create Azure VM
   hosts: localhost
   connection: local
-  collections:
-    - azure.azcollection
 
   tasks:
   - name: Add subnet
