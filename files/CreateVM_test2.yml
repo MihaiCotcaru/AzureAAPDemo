@@ -3,7 +3,7 @@
   hosts: localhost
   connection: local
   collections:
-    - name: azure.azcollection
+    - azure.azcollection
 
   tasks:
   - name: Add subnet
