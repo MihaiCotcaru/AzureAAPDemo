@@ -15,7 +15,7 @@
     azure.azcollection.azure_rm_publicipaddress:
       resource_group: xv-demos
       allocation_method: Static
-      name: "aap2_myPublicIP"
+      name: "{{ PublicIP }}"
       tags:
         Customer: "DarlingII"
     register: output_ip_address
@@ -46,7 +46,7 @@
         Customer: "DarlingII"
       virtual_network: xv-demos-vnet
       subnet: aap2-xv-demos-snet
-      public_ip_name: "aap2_myPublicIP"
+      public_ip_name: "{{ PublicIP }}"
       security_group: aap2-nsg
 
   - name: Create VM
