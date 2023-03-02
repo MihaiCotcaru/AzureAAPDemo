@@ -1,0 +1,24 @@
+- name: "YumCheckAzureVM.Check for Updates"
+  yum:
+    list: updates
+  register: result
+
+- name: "YumCheckAzureVM.Needing Updates"
+  debug: 
+    msg: "There are {{ result.results|length }} packages to update."
+  when:
+    - "result.results|length > 0"
+
+- name: "YumCheckAzureVM.No Updates Required"
+  debug: 
+    msg: "There are no packages to update."
+  when:
+    - "result.results|length == 0"
+
+- name: "YumCheckAzureVM.Ensure Chronyd is running and enabled"
+  service:
+    name: chronyd
+    state: started
+    enabled: true
+  become: true
+  ignore_errors: true
