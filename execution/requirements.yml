@@ -1,0 +1,8 @@
+---
+
+collections:
+  - community.postgresql
+  - ansible.windows
+  - chocolatey.chocolatey
+  - azure.azcollection
+...
