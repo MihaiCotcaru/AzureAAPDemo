@@ -1,3 +1,4 @@
+# Azure inventory script
 plugin: azure_rm
 auth_source: env
 plain_host_names: yes
