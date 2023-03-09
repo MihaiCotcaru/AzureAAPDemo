@@ -1,4 +1,4 @@
-# Ansible specific
+# Ansible specific file
 *.retry
 
 # Binary Packages
