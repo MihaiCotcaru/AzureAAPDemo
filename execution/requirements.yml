@@ -5,4 +5,5 @@ collections:
   - ansible.windows
   - chocolatey.chocolatey
   - azure.azcollection
+  - community.vmware
 ...
