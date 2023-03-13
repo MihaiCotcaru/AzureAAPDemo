@@ -1,9 +1,9 @@
-- name: CreateAzureVM.Add subnet
-  azure.azcollection.azure_rm_subnet:
-    resource_group: xv-demos
-    name: aap2-xv-demos-snet
-    address_prefix: "10.2.3.0/24"
-    virtual_network: xv-demos-vnet
+#- name: CreateAzureVM.Add subnet
+#  azure.azcollection.azure_rm_subnet:
+#    resource_group: xv-demos
+#    name: aap2-xv-demos-snet
+#    address_prefix: "10.2.3.0/24"
+#    virtual_network: xv-demos-vnet
 
 - name: CreateAzureVM.Create public IP address
   azure.azcollection.azure_rm_publicipaddress:
