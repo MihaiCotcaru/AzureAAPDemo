@@ -1,0 +1,32 @@
+---
+- name: Include vm env var
+  include_vars:
+    file: "{{network}}.yml"
+
+- name:  Clone a virtual machine from Linux template and customize
+  community.vmware.vmware_guest:
+    datacenter: "{{ datacenter }}"
+    state: present
+    folder: /RedHatDemo/servers/
+    template: "{{ template }}"
+    name: "{{ vm_name }}"
+    cluster: Prod
+    validate_certs: false
+    networks:
+      - name: "{{network}}"
+        ip: "{{ ip }}"
+        netmask: 255.255.255.0
+    wait_for_ip_address: True
+    wait_for_ip_address_timeout: 180
+    customization:
+      domain: "{{ guest_domain }}"
+      dns_servers:
+        - 192.168.22.80
+        - 192.168.22.10
+      dns_suffix:
+        - ocp.lan
+        - ds.lan
+      script_text: |
+        #!/bin/bash
+        touch /tmp/touch-from-playbook
+  delegate_to: localhost
